@@ -2,6 +2,9 @@ package fr.mestrer.catapp.di
 
 import fr.mestrer.catapp.feature.chat.data.remote.ChatRequest
 import fr.mestrer.catapp.feature.chat.data.remote.ChatRequestImpl
+import fr.mestrer.catapp.feature.chat.data.repository.ChatRepository
+import fr.mestrer.catapp.feature.chat.data.repository.ChatRepositoryImpl
+import fr.mestrer.catapp.feature.chat.ui.list.ChatListViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -27,4 +30,6 @@ val networkModule = module {
 
 val chatModule = module {
     single<ChatRequest> { ChatRequestImpl(get()) }
+    single<ChatRepository> { ChatRepositoryImpl(get()) }
+    factory { ChatListViewModel(get()) }
 }

@@ -1,5 +1,7 @@
 package fr.mestrer.catapp.feature.chat.data.remote
 
+import kotlinx.coroutines.flow.Flow
+
 interface ChatRequest {
-    suspend fun getChats(): List<ChatRaw>
+    fun getChats(): Flow<List<ChatRaw>>
 }

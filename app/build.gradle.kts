@@ -1,7 +1,10 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -20,7 +23,7 @@ android {
         buildConfigField(
             "String",
             "CAT_API_KEY",
-            "\"${project.findProperty("CAT_API_KEY") ?: ""}\""
+            "\"${project.findProperty("CAT_API_KEY")}\""
         )
     }
 
@@ -42,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
