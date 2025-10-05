@@ -1,0 +1,4 @@
+package fr.mestrer.catapp.feature.chat.ui.detail
+
+class ChatDetailViewModel {
+}

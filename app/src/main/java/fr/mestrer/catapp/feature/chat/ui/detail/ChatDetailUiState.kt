@@ -1,0 +1,3 @@
+package fr.mestrer.catapp.feature.chat.ui.detail
+
+data class ChatDetailUiState()
